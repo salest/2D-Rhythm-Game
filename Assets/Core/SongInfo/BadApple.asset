@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb772c53c39c63d49aa44db431349e16, type: 3}
+  m_Name: BadApple
+  m_EditorClassIdentifier: 
+  songName: Bad Apple
+  songArtist: Touhou
+  songDifficulty: 7.5
+  songLength: 1:56
+  songAudioClip: {fileID: 8300000, guid: d63c4a8d79ef9f746a126910ddb13c99, type: 3}
+  songLevelToLoad: 2
