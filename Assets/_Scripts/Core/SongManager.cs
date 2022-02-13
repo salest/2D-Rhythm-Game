@@ -16,6 +16,7 @@ public class SongManager : MonoBehaviour
      * Song Information
      */
     [Header("Song Information")]
+    public SongInfo songInfo;
     public AudioSource audioSource;
     public AudioSource endingSongSource;
     public AudioSource gameOverSongSource;
@@ -32,6 +33,7 @@ public class SongManager : MonoBehaviour
     public bool songStarted = false;
     public bool songEnded = false;
     public float beatOffset = 4;
+
 
     //Song length
     private float songLengthInSec;
@@ -59,6 +61,7 @@ public class SongManager : MonoBehaviour
 
     //Manage player sprite depending if game over/song cleared
     private Player player;
+    private Animator playerHolder;
 
     void Awake()
     {
@@ -76,6 +79,7 @@ public class SongManager : MonoBehaviour
         songLengthInBeats = songLengthInSec / secPerBeat;
 
         player = FindObjectOfType<Player>();
+        playerHolder = GameObject.Find("PlayerHolder").GetComponent<Animator>();
     }
 
     void Update()
@@ -156,6 +160,7 @@ public class SongManager : MonoBehaviour
     {
         songStarted = false;
         songEnded = true;
+        playerHolder.SetTrigger("gameOver");
         player.SetAnimationTrigger("gameOver");
         GameManager.instance.OpenGameOverPanel();
         audioSource.Stop();

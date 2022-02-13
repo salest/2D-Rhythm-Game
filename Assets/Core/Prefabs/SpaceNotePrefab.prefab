@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 981860631385102027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -20, y: 2.39, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -4
-  m_Sprite: {fileID: 21300000, guid: 1f390515c97e6624d827b9418ae7fdbc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df591150b230433458e5722bc103eeef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,14 +103,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
+    oldSize: {x: 4, y: 0.5}
     newSize: {x: 0.64, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 4, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &-9061387389673499385
 MonoBehaviour:
@@ -133,6 +133,7 @@ MonoBehaviour:
   EndPos: {x: 0, y: 0}
   beatOfThisNote: 0
   BeatsShownInAdvance: 0
+  explosionEffect: {fileID: 2136342618020000010, guid: f7e0e5edba02fa04994719ec9da5d506, type: 3}
 --- !u!50 &3764906110249906277
 Rigidbody2D:
   serializedVersion: 4

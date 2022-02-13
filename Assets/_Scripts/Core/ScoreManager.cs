@@ -10,9 +10,10 @@ public class ScoreManager : MonoBehaviour
     public AudioSource missSFX;
     public Text scoreText;
     public Text comboText;
-    static int comboScore;
+    public int comboScore;
     public static int baseScore = 300;
     static int currentCombo;
+    public int maxCombo;
 
     Player player;
 
@@ -21,6 +22,7 @@ public class ScoreManager : MonoBehaviour
         Instance = this;
         comboScore = 0;
         currentCombo = 0;
+        maxCombo = 0;
         scoreText.text = $"SCORE: {comboScore.ToString()}";
         comboText.text = $"COMBO: {currentCombo.ToString()}";
         player = FindObjectOfType<Player>();
@@ -29,6 +31,7 @@ public class ScoreManager : MonoBehaviour
     {
         CheckForCombo();
         currentCombo++;
+        CheckMaxCombo();
         comboScore = comboScore + currentCombo * baseScore;
         scoreText.text = $"SCORE: {comboScore.ToString()}";
         comboText.text = $"COMBO: {currentCombo.ToString()}";
@@ -39,6 +42,7 @@ public class ScoreManager : MonoBehaviour
     {
         CheckForCombo();
         currentCombo++;
+        CheckMaxCombo();
         comboScore = comboScore + currentCombo * baseScore;
         scoreText.text = $"SCORE: {comboScore.ToString()}";
         comboText.text = $"COMBO: {currentCombo.ToString()}";
@@ -60,12 +64,21 @@ public class ScoreManager : MonoBehaviour
         comboText.text = $"COMBO: {currentCombo.ToString()}";
     }
 
+    private void CheckMaxCombo()
+    {
+        if(currentCombo > maxCombo)
+        {
+            maxCombo = currentCombo;
+        }
+    }
+
     private void CheckForCombo()
     {
-        if (player.currentHealth == 125) return;
+        if (player.currentHealth == 100) return;
         
-        if(currentCombo != 0 && currentCombo % 50 == 0)
+        if(currentCombo != 0 && currentCombo % (player.comboHealthRegen - 1) == 0)
         {
+            //Play Regen Sound Effect
             player.currentHealth += 5;
         }
 

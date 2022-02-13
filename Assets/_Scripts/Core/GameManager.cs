@@ -9,6 +9,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject gameOverPanel;
     public GameObject songOverPanel;
+    public GameObject retryButton;
+    public GameObject songSelectButton;
+    public GameObject gradeImage;
+
+    public Text songNameText;
+    public Text maxComboText;
+    public Text scoreText;
 
     private void Awake()
     {
@@ -27,7 +34,12 @@ public class GameManager : MonoBehaviour
         //Play Sound Effect for song over
         //Play animation to open song over panel
         songOverPanel.GetComponent<Animator>().SetTrigger("songOver");
-
+        retryButton.SetActive(true);
+        gradeImage.SetActive(true);
+        songSelectButton.SetActive(true);
+        songNameText.text = SongManager.instance.songInfo.songName;
+        maxComboText.text = "Max Combo: " + ScoreManager.Instance.maxCombo.ToString();
+        scoreText.text = "Score: " + ScoreManager.Instance.comboScore.ToString();
         //Have animation panel show buttons after animation for opening panel is done
     }
 

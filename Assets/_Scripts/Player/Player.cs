@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float currentHealth;
     public float maxHealth = 100f;
     public bool isInvul = false;
+    public float comboHealthRegen = 25f;
 
     private Animator animator;
 

@@ -23,7 +23,8 @@ public class MusicNote : MonoBehaviour
 
     private bool canBePressed = false;
     private Player player;
-    
+
+    public GameObject explosionEffect;
 
     private void Start()
     {
@@ -55,12 +56,20 @@ public class MusicNote : MonoBehaviour
                 //Miss, Break Combo
                 ScoreManager.Instance.Miss();
             }
-            DestroyMusicNote();
+            Destroy(gameObject);
         }
     }
 
     public void DestroyMusicNote()
     {
+        if (noteType == NoteType.Score)
+        {
+            var explode = Instantiate(explosionEffect, transform.position, transform.rotation);
+        }
+        else if(noteType == NoteType.SpaceNote)
+        {
+            var explode = Instantiate(explosionEffect, player.transform.position, player.transform.rotation);
+        }
         Destroy(gameObject);
     }
 
