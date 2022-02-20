@@ -26,6 +26,7 @@ public class SongSelectManager : MonoBehaviour
         songArtist.text = currentSong.songArtist;
         songDifficulty.text = currentSong.songDifficulty;
         songLength.text = currentSong.songLength;
+        SetVolume();
         audioSource.Play();
     }
 
@@ -46,6 +47,11 @@ public class SongSelectManager : MonoBehaviour
     {
         SoundEffectManager.instance.PlaySoundEffect(0);
         LoadManager.instance.LoadLevel(currentSong.songLevelToLoad);
+    }
+
+    private void SetVolume()
+    {
+        audioSource.volume = VolumeManager.instance.songVolume;
     }
 
 }

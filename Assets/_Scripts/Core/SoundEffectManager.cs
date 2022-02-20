@@ -6,7 +6,7 @@ public class SoundEffectManager : MonoBehaviour
 {
     public static SoundEffectManager instance;
     public AudioClip[] soundEffectArray;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -17,6 +17,7 @@ public class SoundEffectManager : MonoBehaviour
         {
             instance = this;
             audioSource = GetComponent<AudioSource>();
+            DontDestroyOnLoad(instance);
         }
     }
 

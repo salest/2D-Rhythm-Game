@@ -17,4 +17,4 @@ MonoBehaviour:
   songDifficulty: 7.5
   songLength: 1:56
   songAudioClip: {fileID: 8300000, guid: d63c4a8d79ef9f746a126910ddb13c99, type: 3}
-  songLevelToLoad: 2
+  songLevelToLoad: 3

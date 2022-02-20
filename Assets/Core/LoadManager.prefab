@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 0}
   slider: {fileID: 0}
+  particleEffect: {fileID: 2136342618020000010, guid: f7e0e5edba02fa04994719ec9da5d506, type: 3}
